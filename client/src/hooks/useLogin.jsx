@@ -10,10 +10,13 @@ const useLogin = () => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post("https://backend-url/api/user/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${process.env.BACKEND_URL}/api/user/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       dispatch({ type: "LOGIN", payload: response.data });
 

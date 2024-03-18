@@ -8,7 +8,7 @@ import { router as userRoutes } from "./routes/user.js";
 const app = express();
 
 const corsOptions = {
-  origin: "https://frontend-url.com",
+  origin: `${process.env.FRONTEND_URL}`,
 };
 
 app.use(express.json());

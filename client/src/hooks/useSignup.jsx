@@ -9,10 +9,13 @@ const useSignup = () => {
 
   const signup = async (email, password) => {
     try {
-      const response = await axios.post("https://backend-url/api/user/signup", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${process.env.BACKEND_URL}/api/user/signup`,
+        {
+          email,
+          password,
+        }
+      );
       dispatch({ type: "LOGIN", payload: response.data });
       localStorage.setItem("user", JSON.stringify(response.data));
     } catch (error) {

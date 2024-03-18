@@ -25,11 +25,14 @@ function Home() {
   useEffect(() => {
     const getBoards = async () => {
       try {
-        const response = await axios.get("https://backend-url/api/boards", {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const response = await axios.get(
+          `${process.env.BACKEND_URL}/api/boards`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         setBoards(response.data);
         setCurrentBoardName(response.data[0].boardName);
         setCurrentBoardData(response.data[0]);

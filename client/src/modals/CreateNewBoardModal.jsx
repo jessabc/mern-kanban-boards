@@ -51,7 +51,7 @@ export default function CreateNewBoardModal({
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "https://backend-url/api/boards",
+        `${process.env.BACKEND_URL}/api/boards`,
         data,
         {
           headers: {

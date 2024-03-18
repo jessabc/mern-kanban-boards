@@ -28,7 +28,7 @@ export default function DeleteBoardModal({
   const deleteBoard = async () => {
     try {
       const response = await axios.delete(
-        `https://backend-url/api/boards/${currentBoardData._id} `,
+        `${process.env.BACKEND_URL}/api/boards/${currentBoardData._id} `,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

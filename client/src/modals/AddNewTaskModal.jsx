@@ -61,7 +61,7 @@ export default function AddNewTaskModal({
   const onSubmit = async (data) => {
     try {
       const response = await axios.put(
-        `https://backend-url/api/boards/tasks/add/${currentBoardData._id}`,
+        `${process.env.BACKEND_URL}/api/boards/tasks/add/${currentBoardData._id}`,
         {
           ...data,
           status: data.status

@@ -35,7 +35,7 @@ export default function Main({ isMenuModalVisible, setIsMenuModalVisible }) {
   const updateDatabase = async (updatedBoard) => {
     try {
       const response = await axios.put(
-        `https://backend-url/api/boards/${currentBoardData._id}`,
+        `${process.env.BACKEND_URL}/api/boards/${currentBoardData._id}`,
         updatedBoard,
         {
           headers: {

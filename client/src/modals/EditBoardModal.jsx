@@ -45,7 +45,7 @@ export default function EditBoardModal({
   const onSubmit = async (data) => {
     try {
       const response = await axios.put(
-        `https://backend-url/api/boards/${currentBoardData._id}`,
+        `${process.env.BACKEND_URL}/api/boards/${currentBoardData._id}`,
         data,
         {
           headers: {

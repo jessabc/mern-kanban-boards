@@ -34,7 +34,7 @@ export default function DeleteTaskModal({
     e.preventDefault();
     try {
       const response = await axios.put(
-        `https://backend-url/api/boards/tasks/delete/${currentBoardData._id}`,
+        `${process.env.BACKEND_URL}/api/boards/tasks/delete/${currentBoardData._id}`,
         { colName: task.status, taskId: task._id },
         {
           headers: {

@@ -63,7 +63,7 @@ export default function EditTaskModal({
   const onSubmit = async (data) => {
     try {
       const response = await axios.put(
-        `https://backend-url/api/boards/tasks/edit/${currentBoardData._id}`,
+        `${process.env.BACKEND_URL}/api/boards/tasks/edit/${currentBoardData._id}`,
         { ...data, _id: task._id, originalStatus: task.status },
         {
           headers: {
